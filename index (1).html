@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexura - Tempus Animi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>NEXURA - TEMPUS ANIMI</h1>
+        <p>Il primo smartwatch AI che cambia colore in base al tuo umore</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="uomo.html">Versione Uomo</a></li>
+            <li><a href="donna.html">Versione Donna</a></li>
+            <li><a href="#tecnologia">Tecnologia</a></li>
+            <li><a href="#investitori">Investitori</a></li>
+            <li><a href="#contatti">Contatti</a></li>
+        </ul>
+    </nav>
+
+    <section id="intro">
+        <div class="container">
+            <h2>Benvenuto nel Futuro del Lusso e della Tecnologia</h2>
+            <p>Nexura - Tempus Animi è il primo smartwatch <span class="highlight">AI-driven</span> che cambia colore in base al tuo umore.</p>
+        </div>
+    </section>
+
+    <section id="scelta">
+        <div class="container">
+            <h2>Scegli il tuo Nexura</h2>
+            <div class="choices">
+                <a href="uomo.html" class="button">Versione Uomo</a>
+                <a href="donna.html" class="button">Versione Donna</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="tecnologia">
+        <div class="container">
+            <h2>Come Funziona?</h2>
+            <p>📊 Sensori biometrici analizzano i parametri fisiologici.</p>
+            <p>🎨 Un anello LED cambia colore in base all'umore.</p>
+            <p>🤖 Un AI-driven system regola le variazioni di colore in tempo reale.</p>
+        </div>
+    </section>
+
+    <section id="investitori">
+        <div class="container">
+            <h2>Perché Investire in Nexura?</h2>
+            <p>✔ Unione tra <span class="highlight">moda e tecnologia</span> premium.</p>
+            <p>✔ Materiali 100% <span class="highlight">Made in Italy</span> e sostenibili.</p>
+            <p>✔ Un mercato in forte crescita nel settore del lusso tech.</p>
+        </div>
+    </section>
+
+    <section id="contatti">
+        <div class="container">
+            <h2>Contattaci</h2>
+            <p>📧 Email: nexurawatch@gmail.com</p>
+            <p>📲 Seguici su TikTok, Instagram, LinkedIn</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Nexura - Tempus Animi. Tutti i diritti riservati.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let sections = document.querySelectorAll("section");
+            let options = {
+                root: null,
+                rootMargin: "0px",
+                threshold: 0.2
+            };
+            let observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("fade-in");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, options);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
