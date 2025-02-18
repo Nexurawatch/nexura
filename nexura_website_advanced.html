@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexura - Tempus Animi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0d0d0d;
+            color: #ffffff;
+            text-align: center;
+            overflow-x: hidden;
+        }
+        header {
+            background: linear-gradient(90deg, #1a1a1a, #333);
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .section {
+            padding: 60px 20px;
+            transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            text-align: left;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+        }
+        .highlight {
+            color: #00ccff;
+            font-weight: bold;
+        }
+        footer {
+            background: #1a1a1a;
+            padding: 20px;
+            font-size: 14px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin-top: 50px;
+            box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .fade-in {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Nexura - Tempus Animi
+    </header>
+    
+    <section class="section" id="intro">
+        <div class="container">
+            <h2>Benvenuto nel Futuro del Lusso e della Tecnologia</h2>
+            <p>Nexura - Tempus Animi è il primo smartwatch <span class="highlight">AI-driven</span> che cambia colore in base al tuo umore.</p>
+        </div>
+    </section>
+
+    <section class="section" id="technology">
+        <div class="container">
+            <h2>Come Funziona?</h2>
+            <p>📊 Sensori biometrici analizzano i parametri fisiologici.</p>
+            <p>🎨 Un anello LED cambia colore in base all'umore.</p>
+            <p>🤖 Un AI-driven system regola le variazioni di colore in tempo reale.</p>
+        </div>
+    </section>
+
+    <section class="section" id="investment">
+        <div class="container">
+            <h2>Perché Investire in Nexura?</h2>
+            <p>✔ Unione tra <span class="highlight">moda e tecnologia</span> premium.</p>
+            <p>✔ Materiali 100% <span class="highlight">Made in Italy</span> e sostenibili.</p>
+            <p>✔ Un mercato in forte crescita nel settore del lusso tech.</p>
+        </div>
+    </section>
+
+    <footer>
+        📧 Contatti: nexurawatch@gmail.com | 🌐 Sito Web: Nexura Official | 📲 Seguici su TikTok, Instagram, LinkedIn
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let sections = document.querySelectorAll(".section");
+            let options = {
+                root: null,
+                rootMargin: "0px",
+                threshold: 0.2
+            };
+            let observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("fade-in");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, options);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
